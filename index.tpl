@@ -23,8 +23,21 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
+
 <h2>{l|truncate:30 s='Hello and welcome to our shop !'}</h2>
+
 <p>{$smarty.now|date_format:"%e %b, %Y"}</p>
+
+{if $cart_qties < 5}
+    <p>You can get free shipping when you order 5 products at least</p>
+{elseif $cart_qties >= 5}
+    <p>Congratulations, free shipping activated</p>
+
+21 Jun, 2017
+
+Congratulations, free shipping activated
+{/if}
+
 {if isset($HOOK_HOME_TAB_CONTENT) && $HOOK_HOME_TAB_CONTENT|trim}
     {if isset($HOOK_HOME_TAB) && $HOOK_HOME_TAB|trim}
         <ul id="home-page-tabs" class="nav nav-tabs clearfix">
